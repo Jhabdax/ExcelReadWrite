@@ -37,10 +37,7 @@ import core.framework.Globals;
 	DESCRIPTION:	    XL_ReadWrite contains multiple methods which helps to interact with Excel.
 	                    Methods listed in this class are meant to work with .xlsx files (XSSF - POI api used)
 	FUNCTION LIST :     Non Static functions.
-	                    Needs to be called using an object of the class XL_ReadWrite                 
-	REVISION HISTORY: 
-	****************************************************************************************************************************************
-	Author : Souvik     Date : 01-10-2013       
+	                    Needs to be called using an object of the class XL_ReadWrite                  
 	****************************************************************************************************************************************
 */	
 public class XL_ReadWrite { 
@@ -58,9 +55,7 @@ public class XL_ReadWrite {
     PARAMETERS: 		String path - (Excel Path)
     RETURNS:		    VOID
     EXAMPLE:	        new XL_ReadWrite(path)
-    REVISION HISTORY: 
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Author : Souvik     Date : 01-10-2013       
+   
     ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public XL_ReadWrite(String path) throws Exception{
 	  this.path = path;
@@ -84,8 +79,7 @@ public class XL_ReadWrite {
     RETURNS:		    int Row number
     EXAMPLE:	        getRowCount(String sheetName)	
     REVISION HISTORY: 
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Author : Souvik     Date : 01-10-2013       
+   
     ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public int getRowCount(String sheetName) throws Exception{
 		int number = 0;
@@ -108,9 +102,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		int RowNum,String sheetName
 	RETURNS:			integer Column number
 	EXAMPLE:	        getColCount(int RowNum,String sheetName)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 01-10-2013       
+	   
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public int getColCount(int RowNum,String sheetName) throws Exception{
 	 	int iCol = 0;   
@@ -130,9 +122,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName,int rowNum,String colName
 	RETURNS:			String Cell Data
 	EXAMPLE:	        getCellData(String sheetName,int rowNum,String colName)		
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 02-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public String getCellData(String sheetName,int rowNum,String colName) throws Exception{
 	    try{
@@ -184,9 +174,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName,int rowNum,int colNum
 	RETURNS:			String Cell Data
 	EXAMPLE:	        getCellData(String sheetName,int rowNum,int colNum)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 02-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public String getCellData(String sheetName,int rowNum,int colNum) throws Exception{
 	    try{
@@ -237,9 +225,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName,int rowNum,String colName
 	RETURNS:			int Column number
 	EXAMPLE:	        getColNum(String sheetName,int rowNum,String colName)	
-	REVISION HISTORY: 
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 02-10-2013       
+	
     ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public int getColNum(String sheetName,int rowNum,String colName) throws Exception{
 		try{
@@ -268,9 +254,7 @@ public class XL_ReadWrite {
 	EXAMPLE:	        setCellData(String sheetName,String colName,int rowNum,String Data)
 	COMMENTS:           To save the changes made in Excel, use workbook and fout of XL_ReadWrite class
 	                    (e.g. XL.workbook.write(XL.fout);XL.fout.close();)	
-	REVISION HISTORY: 
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 02-10-2013       
+	 
     ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */  public void setCellData(String sheetName,String colName,int rowNum,String Data) throws Exception{
 	    try{
@@ -309,9 +293,7 @@ public class XL_ReadWrite {
 	EXAMPLE:	        setCellData(String sheetName,int rowNum,int colNum,String Data)	
 	COMMENTS:           To save the changes made in Excel, use workbook and fout of XL_ReadWrite class
 	                    (e.g. XL.workbook.write(XL.fout);XL.fout.close();)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void setCellData(String sheetName,int rowNum,int colNum,String Data) throws Exception{
 	    try{
@@ -339,9 +321,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName
 	RETURNS:			null
 	EXAMPLE:	        addSheet(String sheetName)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void addSheet(String sheetName) throws Exception{
 	    File file = new File(path);
@@ -365,9 +345,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName
 	RETURNS:			boolean
 	EXAMPLE:	        deleteSheet(String sheetName)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	   
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void deleteSheet(String sheetName) throws Exception{
 		try {
@@ -383,9 +361,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName
 	RETURNS:			null
 	EXAMPLE:	        isSheetExist(String sheetName)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public boolean isSheetExist(String sheetName) throws Exception{
 		try {
@@ -402,9 +378,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		String sheetName,String colName
 	RETURNS:			boolean
 	EXAMPLE:	        addColumn(String sheetName,String colName)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void addColumn(String sheetName,String colName) throws Exception{
 		try {
@@ -424,9 +398,7 @@ public class XL_ReadWrite {
 	PARAMETERS: 		Cell cell,int rowNum
 	RETURNS:			Nothing
 	EXAMPLE:	        setStyle(Cell cell,int rowNum)	
-	REVISION HISTORY: 
-	------------------------------------------------------------------------------------------------------------------------------------------------------------
-	Author : Souvik     Date : 03-10-2013       
+	    
 	------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void setStyle(Cell cell,int rowNum) throws Exception{
 			try{	
@@ -458,9 +430,7 @@ RETURNS:			boolean
 EXAMPLE:	        setCellData(String sheetName,int rowNum,int colNum,String Data)	
 COMMENTS:           To save the changes made in Excel, use workbook and fout of XL_ReadWrite class
                     (e.g. XL.workbook.write(XL.fout);XL.fout.close();)	
-REVISION HISTORY: 
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-Author : Souvik     Date : 03-10-2013       
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void setCellData(String sheetName,int rowNum,int colNum,String Data,String Colour) throws Exception{
     try{
@@ -486,9 +456,7 @@ DESCRIPTION:	    Sets a Cell style
 PARAMETERS: 		Cell cell,int rowNum
 RETURNS:			Nothing
 EXAMPLE:	        setStyle(Cell cell,int rowNum)	
-REVISION HISTORY: 
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-Author : Souvik     Date : 03-10-2013       
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void setStyle(Cell cell,String Colour) throws Exception{
 		try{	
@@ -537,10 +505,7 @@ FUNCTION:			setDataValidation(String sheetName,int rowNum,String colName,ArrayLi
 DESCRIPTION:	    
 PARAMETERS: 		
 RETURNS:			Nothing
-EXAMPLE:	        	
-REVISION HISTORY: 
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-Author : Souvik     Date : 03-10-2013       
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 */	public void setDataValidation(String sheetName,int rowNum,String colName,ArrayList<String> dataItems) throws Exception{
 		try{
